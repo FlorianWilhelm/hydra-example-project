@@ -1,0 +1,18 @@
+# hydra section to build up the config hierarchy with defaults
+defaults:
+  - _self_
+  - base_config
+  - db: mysql.yaml
+  # experiment: is not mentioned here but in config.py to have a mandatory setting
+
+
+main:
+    sleep: 3
+
+
+neptune:
+    project: florian.wilhelm/my_expriments  # `shared/onboarding` if no account
+    api_token: '~/.neptune_api_token' # `ANONYMOUS` if no account
+    tags: ["run-1"]
+    description: "Experiment run on GCP"
+    mode: "async" # or "offline", "sync", "debug"

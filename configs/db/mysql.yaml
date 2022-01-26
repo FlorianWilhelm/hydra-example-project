@@ -1,0 +1,5 @@
+driver: mysql
+host: server_string
+port: 1028
+username: myself
+password: secret

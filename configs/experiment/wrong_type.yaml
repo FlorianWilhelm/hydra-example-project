@@ -1,0 +1,3 @@
+model: 'RandomForest'
+l2: 0.01
+n_steps: string # wrong type

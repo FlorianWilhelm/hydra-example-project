@@ -1,0 +1,25 @@
+name: hydra-example-project
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+  # - fastai
+dependencies:
+  - python>=3.6
+  - pip
+  - hydra-core
+  - pydantic
+  - ipython
+  - pip:
+     - -e .  # install git checkout of embarrassingly-parallel-python in editable mode
+
+  # DEVELOPMENT ONLY PACKAGES (could also be kept in a separate environment file)
+  - jupyterlab
+  - pytest
+  - pytest-cov
+  - tox
+  - pre_commit
+  - nbdime
+  - nbstripout
+  - sphinx
+  - recommonmark

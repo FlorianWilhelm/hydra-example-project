@@ -1,0 +1,2 @@
+model: 'RandomForest'
+l2: 0.01

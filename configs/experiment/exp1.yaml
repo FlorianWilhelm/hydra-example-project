@@ -1,0 +1,3 @@
+model: 'XGBoost'
+l2: 0.01
+n_steps: 1000

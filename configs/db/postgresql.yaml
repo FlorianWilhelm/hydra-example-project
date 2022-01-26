@@ -1,0 +1,5 @@
+driver: postgreqsql
+host: server_string
+port: 1022
+username: me
+password: birthday

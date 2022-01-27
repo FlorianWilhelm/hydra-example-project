@@ -1,9 +1,13 @@
-# we use pydantic as a replacement of default dataclasses for more validation features
+"""
+Schema definition and validation of the hierarchical config files.
+"""
 from typing import List
 
 from hydra.core.config_store import ConfigStore
 from omegaconf import MISSING
 from pydantic import validator
+
+# we use pydantic as a replacement of default dataclasses for more validation features
 from pydantic.dataclasses import dataclass
 
 

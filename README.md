@@ -4,7 +4,7 @@
 
 > A small example project for efficiently configuring a Python application with YAMLs and the CLI.
 
-### Why should I care?
+## Why should I care?
 
 A frequent requirement for productive Python application is that they are configurable via configuration files and/or
 the command-line-interface (CLI). This allows you to change the behavior of your application without touching the source code, e.g. configuring
@@ -28,22 +28,6 @@ which extends the validation capabilities of [OmegaConf] that is used internally
 
 Read this [blog post] if you want to know more.
 
-### BTW, how was this example project set up?
-
-Glad you asked. This project was set up using the miraculous [PyScaffold] with the [dsproject extension].
-The setup was as simple as:
-```shell
-putup -f hydra-example-project --dsproject -p my_pkg
-```
-
-In order to have the CLI command `hydra-test`, we changed in `setup.cfg` the following lines:
-```ini
-# Add here console scripts like:
-console_scripts =
-     hydra-test = my_pkg.cli:main
-```
-Remember to run `pip install -e .` after any changes to `setup.cfg`.
-
 ## Installation & Testing
 
 If you want to play around with this project, just clone it and set up the necessary environment:
@@ -58,6 +42,22 @@ If you want to play around with this project, just clone it and set up the neces
    ```
 
 and you are all set to run `hydra-test`.
+
+## By the way, how was this awesome example project set up?
+
+Glad you asked. This project was set up using the miraculous [PyScaffold] with the [dsproject extension].
+The setup was as simple as:
+```shell
+putup -f hydra-example-project --dsproject -p my_pkg
+```
+
+In order to have the CLI command `hydra-test`, we changed in `setup.cfg` the following lines:
+```ini
+# Add here console scripts like:
+console_scripts =
+     hydra-test = my_pkg.cli:main
+```
+Remember to run `pip install -e .` after any changes to `setup.cfg`.
 
 
 ## Project Organization

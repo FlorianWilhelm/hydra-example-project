@@ -100,6 +100,7 @@ So experiment is a mandatory parameter that the CLI user needs to provide. Thus,
 configuration from `exp1.yaml` and finally get what we expect:
 ```shell
 ❯ hydra-test -cd configs +experiment=exp1
+[2022-01-27 08:14:34,257][my_pkg.cli][INFO] -
 main:
   sleep: 3
 neptune:
@@ -120,7 +121,9 @@ experiment:
   l2: 0.01
   n_steps: 1000
 ```
-Note that we had to use a plus sign in the flag `+experiment` as we *added* the mandatory experiment parameter.
+Note that we had to use a plus sign in the flag `+experiment` as we *added* the mandatory experiment parameter. Note
+that Hydra has also set up the logging for us and besides the terminal all output will also be collected in an `./outputs`
+folder.
 
 So the section `main` and `neptune` are directly defined in `main.yaml` but why did Hydra now choose the MySQL database?
 This is due to fact that in `main.yaml`, we defined some defaults:
@@ -167,6 +170,7 @@ class DataBase:
 Good, so we could fix our configuration file or pass an extra parameter if we are in a hurry, i.e.:
 ```shell
 ❯ hydra-test -cd configs +experiment=exp1 db=postgresql db.port=1832
+[2022-01-27 08:13:52,148][my_pkg.cli][INFO] -
 main:
   sleep: 3
 neptune:
@@ -198,7 +202,8 @@ you can just use the `--multirun` feature, or `-m` for short:
 ```shell
 hydra-test -m -cd configs "+experiment=glob(exp*)"
 ```
-There's much more to Hydra and several plugins even for hyperparameter optimization exist. So check it out!
+There's much more to Hydra and several plugins even for hyperparameter optimization exist. Also note that with the
+flag `--hydra-help`, you can see the hydra-specific parameters of your application. So now go and check it out!
 
 
 ### BTW, how was this example project set up?

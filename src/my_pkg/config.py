@@ -22,13 +22,11 @@ class Experiment:
 class DataBase:
     driver: str
     host: str
-
     @validator("port")
-    def validate_some_var(cls, port: int) -> int:
+    def check_non_privileged_port(cls, port: int) -> int:
         if port < 1024:
             raise ValueError("Choose a non-privileged port!")
         return port
-
     port: int
     username: str
     password: str

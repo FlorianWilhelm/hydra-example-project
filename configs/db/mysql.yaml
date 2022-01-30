@@ -1,5 +1,5 @@
 driver: mysql
 host: server_string
-port: 1028
+port: ${env:MYSQL_PORT,1028}
 username: myself
 password: secret
